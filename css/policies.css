@@ -1,0 +1,56 @@
+/* ============================================
+   POLICIES.CSS — Policies page
+   ============================================ */
+.policies-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--space-lg);
+  padding: var(--space-lg) 0;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .policies-layout { grid-template-columns: 1fr; }
+  .policies-sidebar { display: none; }
+}
+
+/* Sidebar nav */
+.policies-sidebar {
+  position: sticky;
+  top: calc(var(--nav-height) + 20px);
+}
+.policies-sidebar h4 {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 12px;
+}
+.sidebar-nav { list-style: none; }
+.sidebar-nav li { margin-bottom: 4px; }
+.sidebar-nav a {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  display: block;
+  transition: background 0.15s, color 0.15s;
+  border-left: 2px solid transparent;
+}
+.sidebar-nav a:hover {
+  background: rgba(82,183,136,0.1);
+  color: var(--color-text);
+  border-left-color: var(--color-sage);
+}
+
+/* Policy document */
+.policy-doc { margin-bottom: var(--space-xl); padding-bottom: var(--space-lg); border-bottom: 1px solid rgba(82,183,136,0.15); }
+.policy-doc:last-child { border-bottom: none; }
+.policy-doc h2 { font-size: 1.5rem; margin-bottom: 8px; }
+.policy-doc h3 { font-family: var(--font-sans); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 11px; color: var(--color-text-muted); margin: var(--space-sm) 0 8px; }
+.policy-doc p { margin-bottom: 12px; font-size: 14px; line-height: 1.8; }
+.policy-doc ul, .policy-doc ol { margin: 8px 0 12px 20px; }
+.policy-doc li { font-family: var(--font-sans); font-size: 14px; line-height: 1.75; color: var(--color-text-muted); margin-bottom: 4px; }
+.policy-doc a { color: var(--color-forest-mid); text-decoration: underline; }
