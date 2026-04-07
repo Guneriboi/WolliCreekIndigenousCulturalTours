@@ -187,7 +187,9 @@
 
 /* ---- PAGE HERO (inner pages) ---- */
 .page-hero {
-  background: linear-gradient(160deg, var(--color-forest-dark) 0%, var(--color-forest) 60%, var(--color-forest-mid) 100%);
+  background:
+    linear-gradient(160deg, rgba(13,34,24,0.85) 0%, rgba(27,58,45,0.78) 60%, rgba(45,106,79,0.72) 100%),
+    url('../images/Bush regen site 2.jpg') center/cover no-repeat;
   padding: var(--space-xl) var(--space-md) var(--space-lg);
   text-align: center;
 }
