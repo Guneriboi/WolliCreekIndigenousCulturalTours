@@ -2,7 +2,24 @@
    TOURS.CSS — Tour detail page
    ============================================ */
 
-/* Quick facts bar */
+/* ---- TOURS HERO (overrides shared .page-hero) ---- */
+.tours-hero {
+  min-height: 68vh;
+  background:
+    linear-gradient(160deg, rgba(13,34,24,0.88) 0%, rgba(27,58,45,0.80) 50%, rgba(45,106,79,0.65) 100%),
+    url('../images/CadigalofWarane.png') center 30%/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-xl) var(--space-md) var(--space-lg);
+}
+.tours-hero .label { margin-bottom: var(--space-sm); display: block; }
+.tours-hero h1 { color: var(--color-sage-light); margin-bottom: var(--space-sm); }
+.tours-hero p { color: rgba(212,233,194,0.75); max-width: 600px; margin: 0 auto; }
+
+/* ---- FACTS BAR ---- */
 .facts-bar {
   background: var(--color-forest);
   padding: 20px var(--space-md);
@@ -16,56 +33,245 @@
 .fact strong { display: block; font-size: 1rem; color: var(--color-sage-light); font-weight: 700; }
 .fact span { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: rgba(212,233,194,0.5); }
 
-/* Tour narrative */
+/* ---- TOUR NARRATIVE ---- */
 .tour-narrative { background: var(--color-cream); padding: var(--space-lg) 0; }
 .tour-narrative .container p { max-width: 720px; margin-bottom: var(--space-sm); font-size: 15px; line-height: 1.85; color: var(--color-text-muted); }
 .tour-narrative .container h2 { margin-bottom: var(--space-sm); }
 
-/* Stop timeline */
-.stops-section { background: var(--color-white); padding: var(--space-lg) 0; }
-.stops-section h2 { margin-bottom: var(--space-md); }
+/* ---- ROUTE MAP ---- */
+.route-map-section {
+  background: var(--color-forest-dark);
+  padding: var(--space-lg) 0;
+}
+.route-map-section .label { color: var(--color-sage); }
+.route-map-section h2 { color: var(--color-sage-light); margin-bottom: 8px; }
+.route-map-section .map-intro { color: rgba(212,233,194,0.6); font-size: 13px; max-width: 600px; margin-bottom: var(--space-md); }
 
-.stop {
+.map-strip {
   display: grid;
-  grid-template-columns: 60px 1fr;
-  gap: var(--space-sm);
-  padding: var(--space-sm) 0;
-  border-bottom: 1px solid rgba(82,183,136,0.12);
-  align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(82,183,136,0.2);
 }
-.stop:last-child { border-bottom: none; }
-
-.stop-number {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--color-forest-mid);
-  color: var(--color-white);
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+.map-strip-img {
+  position: relative;
+  overflow: hidden;
 }
-.stop-content h3 { font-size: 1rem; color: var(--color-text); margin-bottom: 4px; }
-.stop-content p { font-size: 13px; line-height: 1.65; margin-bottom: 6px; }
-.stop-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-.stop-tag {
+.map-strip-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.6) brightness(0.85) contrast(1.1);
+  transition: filter 0.35s;
+}
+.map-strip-img:hover img { filter: saturate(1) brightness(0.95); }
+.map-strip-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(13,34,24,0.85));
+  color: var(--color-sage-light);
   font-family: var(--font-sans);
   font-size: 9px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 3px 8px;
+  padding: 20px 10px 8px;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .map-strip { grid-template-columns: 1fr; }
+  .map-strip-img img { height: 180px; }
+}
+
+/* ---- STOPS SECTION ---- */
+.stops-section { background: var(--color-cream); padding: var(--space-lg) 0; }
+.stops-section h2 { margin-bottom: var(--space-md); }
+
+/* Stop card */
+.stop-card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 20px rgba(13,34,24,0.08);
+  background: var(--color-white);
+  position: relative;
+}
+
+/* Category accent border */
+.stop-card[data-cat="cultural"]     .stop-body { border-left: 4px solid var(--color-sage); }
+.stop-card[data-cat="ecology"]      .stop-body { border-left: 4px solid #52a87b; }
+.stop-card[data-cat="wetlands"]     .stop-body { border-left: 4px solid #2D6A8F; }
+.stop-card[data-cat="rockart"]      .stop-body { border-left: 4px solid #9B2335; }
+.stop-card[data-cat="bushfoods"]    .stop-body { border-left: 4px solid #6B8E23; }
+.stop-card[data-cat="geology"]      .stop-body { border-left: 4px solid #8B6914; }
+.stop-card[data-cat="conservation"] .stop-body { border-left: 4px solid #2D6A4F; }
+.stop-card[data-cat="wildlife"]     .stop-body { border-left: 4px solid #2D6A8F; }
+.stop-card[data-cat="end"]          .stop-body { border-left: 4px solid var(--color-forest-mid); }
+
+.stop-img {
+  position: relative;
+  min-height: 240px;
+  overflow: hidden;
+  background: var(--color-forest-mid);
+}
+.stop-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.stop-card:hover .stop-img img { transform: scale(1.04); }
+
+/* Gradient overlay on image */
+.stop-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(13,34,24,0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Stop number badge */
+.stop-num-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(13,34,24,0.82);
+  border: 2px solid rgba(82,183,136,0.5);
+  color: var(--color-sage-light);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.stop-body {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.stop-body h3 {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+.stop-body p {
+  font-size: 13px;
+  line-height: 1.72;
+  color: var(--color-text-muted);
+}
+.stop-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+.stop-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.stop-tag {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 9px;
   border-radius: 3px;
   background: var(--color-cream);
   color: var(--color-text-muted);
 }
-.stop-time { font-family: var(--font-sans); font-size: 10px; color: var(--color-sage); font-weight: 600; letter-spacing: 1px; }
+/* Category tag tints */
+.stop-tag.t-cultural     { background: rgba(82,183,136,0.12); color: var(--color-forest-mid); }
+.stop-tag.t-ecology      { background: rgba(82,168,123,0.12); color: #2a6a3a; }
+.stop-tag.t-wetlands     { background: rgba(45,106,143,0.12); color: #1a4a6a; }
+.stop-tag.t-rockart      { background: rgba(155,35,53,0.1);   color: #7a1a28; }
+.stop-tag.t-bushfoods    { background: rgba(107,142,35,0.12); color: #4a6010; }
+.stop-tag.t-geology      { background: rgba(139,105,20,0.12); color: #7a5a0a; }
+.stop-tag.t-conservation { background: rgba(45,106,79,0.12);  color: var(--color-forest-mid); }
+.stop-tag.t-wildlife     { background: rgba(45,106,143,0.12); color: #1a4a6a; }
 
-/* Practical info */
-.practical-section { background: var(--color-cream); padding: var(--space-lg) 0; }
+.stop-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.stop-time {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  color: var(--color-sage);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.stop-story-time {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  color: rgba(82,183,136,0.65);
+  letter-spacing: 0.5px;
+}
+
+/* Walk connector between stops */
+.walk-connector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0 10px 24px;
+}
+.walk-connector-line {
+  width: 1px;
+  height: 28px;
+  background: linear-gradient(to bottom, rgba(82,183,136,0.5), rgba(82,183,136,0.1));
+  flex-shrink: 0;
+}
+.walk-connector-label {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(82,183,136,0.55);
+}
+
+/* Mobile responsive */
+@media (max-width: 700px) {
+  .stop-card {
+    grid-template-columns: 1fr;
+  }
+  .stop-img {
+    min-height: 200px;
+  }
+  .stop-body {
+    padding: 20px;
+    border-left: none !important;
+    border-top: 4px solid var(--color-sage);
+  }
+  /* Fix border-top color by category on mobile */
+  .stop-card[data-cat="rockart"]      .stop-body { border-top-color: #9B2335; }
+  .stop-card[data-cat="wetlands"]     .stop-body { border-top-color: #2D6A8F; }
+  .stop-card[data-cat="bushfoods"]    .stop-body { border-top-color: #6B8E23; }
+  .stop-card[data-cat="geology"]      .stop-body { border-top-color: #8B6914; }
+  .stop-card[data-cat="wildlife"]     .stop-body { border-top-color: #2D6A8F; }
+  .stop-img::after { background: linear-gradient(to bottom, rgba(13,34,24,0.1) 0%, rgba(13,34,24,0.4) 100%); }
+}
+
+/* ---- PRACTICAL INFO ---- */
+.practical-section { background: var(--color-white); padding: var(--space-lg) 0; }
 .practical-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -74,11 +280,14 @@
 }
 @media (max-width: 768px) { .practical-grid { grid-template-columns: 1fr; } }
 .practical-item h4 { font-family: var(--font-sans); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 11px; color: var(--color-text); margin-bottom: 8px; }
-.practical-item p { font-size: 13px; }
+.practical-item p { font-size: 13px; line-height: 1.7; color: var(--color-text-muted); }
+.practical-item a { color: var(--color-forest-mid); text-decoration: underline; }
 
-/* Inline CTA */
+/* ---- INLINE CTA ---- */
 .inline-cta {
-  background: var(--color-forest);
+  background:
+    linear-gradient(135deg, rgba(13,34,24,0.92) 0%, rgba(27,58,45,0.88) 100%),
+    url('../images/Bush regen site 3.jpg') center/cover no-repeat;
   padding: var(--space-lg) var(--space-md);
   text-align: center;
 }
