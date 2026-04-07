@@ -1,0 +1,85 @@
+/* ============================================
+   TOURS.CSS — Tour detail page
+   ============================================ */
+
+/* Quick facts bar */
+.facts-bar {
+  background: var(--color-forest);
+  padding: 20px var(--space-md);
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.fact { font-family: var(--font-sans); }
+.fact strong { display: block; font-size: 1rem; color: var(--color-sage-light); font-weight: 700; }
+.fact span { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: rgba(212,233,194,0.5); }
+
+/* Tour narrative */
+.tour-narrative { background: var(--color-cream); padding: var(--space-lg) 0; }
+.tour-narrative .container p { max-width: 720px; margin-bottom: var(--space-sm); font-size: 15px; line-height: 1.85; color: var(--color-text-muted); }
+.tour-narrative .container h2 { margin-bottom: var(--space-sm); }
+
+/* Stop timeline */
+.stops-section { background: var(--color-white); padding: var(--space-lg) 0; }
+.stops-section h2 { margin-bottom: var(--space-md); }
+
+.stop {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: var(--space-sm);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid rgba(82,183,136,0.12);
+  align-items: start;
+}
+.stop:last-child { border-bottom: none; }
+
+.stop-number {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-forest-mid);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.stop-content h3 { font-size: 1rem; color: var(--color-text); margin-bottom: 4px; }
+.stop-content p { font-size: 13px; line-height: 1.65; margin-bottom: 6px; }
+.stop-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.stop-tag {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+  background: var(--color-cream);
+  color: var(--color-text-muted);
+}
+.stop-time { font-family: var(--font-sans); font-size: 10px; color: var(--color-sage); font-weight: 600; letter-spacing: 1px; }
+
+/* Practical info */
+.practical-section { background: var(--color-cream); padding: var(--space-lg) 0; }
+.practical-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+@media (max-width: 768px) { .practical-grid { grid-template-columns: 1fr; } }
+.practical-item h4 { font-family: var(--font-sans); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 11px; color: var(--color-text); margin-bottom: 8px; }
+.practical-item p { font-size: 13px; }
+
+/* Inline CTA */
+.inline-cta {
+  background: var(--color-forest);
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+}
+.inline-cta h2 { color: var(--color-sage-light); margin-bottom: 16px; }
