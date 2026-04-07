@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book a Wolli Creek Valley Cultural Guided Tour with Jessy Haiyang. Contact Jessy directly to arrange your tour date.">
+  <title>Book a Tour — Wolli Creek Cultural Tours</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/book.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo">Wolli Creek <span>Cultural Tours</span></a>
+    <ul class="nav-links">
+      <li><a href="tours.html">Tours</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="policies.html">Policies</a></li>
+      <li><a href="book.html" class="active">Contact</a></li>
+    </ul>
+    <a href="book.html" class="nav-cta">Book Now</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <header class="page-hero">
+    <span class="label">Book a Tour</span>
+    <h1><strong>Walk Country</strong><br>with Jessy</h1>
+    <p>Small groups · 2.75 hours · Tempe Station Carpark · All abilities welcome</p>
+  </header>
+
+  <!-- PRICING -->
+  <section class="pricing-section">
+    <div class="container">
+      <span class="label">Pricing</span>
+      <h2>Tour Rates</h2>
+      <div class="price-cards">
+        <div class="price-card">
+          <h3>Adult</h3>
+          <div class="price">TBC</div>
+          <p class="price-note">Per person · Includes all stops</p>
+        </div>
+        <div class="price-card">
+          <h3>Concession</h3>
+          <div class="price">TBC</div>
+          <p class="price-note">Pensioner / student / health care card</p>
+        </div>
+        <div class="price-card">
+          <h3>Private Group</h3>
+          <div class="price">Contact</div>
+          <p class="price-note">Groups of 8+ · Schools &amp; organisations welcome</p>
+        </div>
+      </div>
+      <p style="margin-top:16px;font-size:13px;">Pricing will be confirmed closer to the launch of public tours. <a href="mailto:jessyhaiyang@gmail.com" style="color:var(--color-forest-mid);text-decoration:underline;">Contact Jessy</a> to register your interest or enquire about private bookings.</p>
+    </div>
+  </section>
+
+  <!-- BOOKING FORM + HOW TO BOOK -->
+  <div style="background:var(--color-cream);padding-bottom:var(--space-lg);">
+    <div class="container">
+      <div class="book-layout">
+
+        <!-- Left: How to book -->
+        <div>
+          <span class="label">How It Works</span>
+          <h2>Booking a Tour</h2>
+          <p style="margin:8px 0 var(--space-md);">Tours are booked directly with Jessy — no third-party platform, no booking fees.</p>
+
+          <ol class="steps">
+            <li>
+              <div class="step-num">1</div>
+              <div class="step-text">
+                <h4>Choose a Date</h4>
+                <p>Tours run on selected weekends. Contact Jessy to find out available dates, or suggest a date that suits your group.</p>
+              </div>
+            </li>
+            <li>
+              <div class="step-num">2</div>
+              <div class="step-text">
+                <h4>Send an Enquiry</h4>
+                <p>Use the form on this page, email jessyhaiyang@gmail.com, or call 0491 701 488. Include your preferred date, group size, and any accessibility requirements.</p>
+              </div>
+            </li>
+            <li>
+              <div class="step-num">3</div>
+              <div class="step-text">
+                <h4>Receive Confirmation</h4>
+                <p>Jessy will respond within 48 hours to confirm your booking and provide meeting point details, payment instructions, and what to bring.</p>
+              </div>
+            </li>
+            <li>
+              <div class="step-num">4</div>
+              <div class="step-text">
+                <h4>Walk Country</h4>
+                <p>Meet Jessy at Tempe Station Carpark at your confirmed time. Tours begin promptly — please arrive 5 minutes early.</p>
+              </div>
+            </li>
+          </ol>
+
+          <div class="direct-contact">
+            <h3>Contact Jessy Directly</h3>
+            <div class="contact-method">
+              <div>
+                <span class="contact-method-label">Email</span>
+                <a href="mailto:jessyhaiyang@gmail.com">jessyhaiyang@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-method">
+              <div>
+                <span class="contact-method-label">Phone</span>
+                <a href="tel:0491701488">0491 701 488</a>
+              </div>
+            </div>
+            <div class="contact-method">
+              <div>
+                <span class="contact-method-label">Meeting Point</span>
+                <a href="https://maps.apple.com/?q=Tempe+Station" target="_blank" rel="noopener">Tempe Station Carpark, Tempe NSW 2044</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Contact form -->
+        <div>
+          <div class="contact-form">
+            <h3>Send an Enquiry</h3>
+            <form action="mailto:jessyhaiyang@gmail.com" method="post" enctype="text/plain">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input type="text" id="name" name="name" placeholder="First &amp; last name" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <input type="tel" id="phone" name="phone" placeholder="04XX XXX XXX">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="you@email.com" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="date">Preferred Date</label>
+                  <input type="date" id="date" name="date">
+                </div>
+                <div class="form-group">
+                  <label for="group">Group Size</label>
+                  <select id="group" name="group">
+                    <option value="">Select...</option>
+                    <option value="1">1 person</option>
+                    <option value="2">2 people</option>
+                    <option value="3-5">3–5 people</option>
+                    <option value="6-10">6–10 people</option>
+                    <option value="11+">11+ people</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Any questions, accessibility requirements, or special requests..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%;">Send Enquiry</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>Wolli Creek Valley Cultural Tours · Bidjigal &amp; Dharawal Country · Inner West Sydney</p>
+    <p><a href="mailto:jessyhaiyang@gmail.com">jessyhaiyang@gmail.com</a> · <a href="tel:0491701488">0491 701 488</a></p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

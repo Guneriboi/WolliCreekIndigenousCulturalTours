@@ -1,0 +1,119 @@
+/* ============================================
+   BOOK.CSS — Bookings & contact page
+   ============================================ */
+.book-layout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: var(--space-lg);
+  padding: var(--space-lg) 0;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .book-layout { grid-template-columns: 1fr; }
+}
+
+/* How to book steps */
+.steps { list-style: none; margin-bottom: var(--space-md); }
+.steps li {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-start;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid rgba(82,183,136,0.12);
+}
+.steps li:last-child { border-bottom: none; }
+.step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-sage);
+  color: var(--color-forest-dark);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.step-text h4 { font-size: 0.9rem; margin-bottom: 4px; font-family: var(--font-sans); font-weight: 600; }
+.step-text p { font-size: 13px; }
+
+/* Contact form */
+.contact-form { background: var(--color-white); border-radius: 8px; padding: var(--space-md); box-shadow: 0 2px 16px rgba(27,58,45,0.08); }
+.contact-form h3 { margin-bottom: var(--space-sm); font-size: 1.1rem; }
+
+.form-group { margin-bottom: var(--space-sm); }
+.form-group label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(82,183,136,0.3);
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-text);
+  background: var(--color-cream);
+  transition: border-color 0.15s;
+  appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-sage);
+}
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm); }
+@media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+
+/* Direct contact panel */
+.direct-contact {
+  background: var(--color-forest);
+  border-radius: 8px;
+  padding: var(--space-md);
+  margin-top: var(--space-md);
+}
+.direct-contact h3 { color: var(--color-sage-light); margin-bottom: var(--space-sm); font-size: 1rem; }
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(82,183,136,0.15);
+}
+.contact-method:last-child { border-bottom: none; }
+.contact-method-label { font-family: var(--font-sans); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: rgba(212,233,194,0.5); display: block; margin-bottom: 2px; }
+.contact-method a { color: var(--color-sage-light); font-size: 14px; text-decoration: none; }
+.contact-method a:hover { color: var(--color-sage); text-decoration: underline; }
+
+/* Pricing */
+.pricing-section { background: var(--color-cream); padding: var(--space-lg) 0; border-top: 1px solid rgba(82,183,136,0.15); }
+.price-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+@media (max-width: 700px) { .price-cards { grid-template-columns: 1fr; } }
+.price-card {
+  background: var(--color-white);
+  border-radius: 8px;
+  padding: var(--space-md);
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(27,58,45,0.06);
+}
+.price-card h3 { font-size: 0.9rem; font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 12px; color: var(--color-text-muted); }
+.price-card .price { font-size: 2rem; font-family: var(--font-serif); color: var(--color-forest); margin-bottom: 8px; }
+.price-card .price-note { font-size: 12px; color: var(--color-text-muted); }
