@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
-        toggle.classList.remove('open');
+        toggle?.classList.remove('open');
       });
     });
   }
