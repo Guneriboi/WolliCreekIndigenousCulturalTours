@@ -133,6 +133,8 @@
   letter-spacing: 1px;
 }
 .about-img img { width: 100%; height: 100%; object-fit: cover; }
+.about-img--map { background: #f0ebe0; height: 360px; }
+.about-img--map img { object-fit: contain; padding: 12px; }
 @media (max-width: 768px) {
   .about-strip { grid-template-columns: 1fr; }
   .about-img { height: 220px; }
