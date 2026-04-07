@@ -29,6 +29,7 @@
 
   <main id="main-content">
 
+  <!-- HERO -->
   <header class="page-hero">
     <span class="label">Book a Tour</span>
     <h1><strong>Walk Country</strong><br>with Jessy</h1>
@@ -57,20 +58,20 @@
           <p class="price-note">Per person · Groups of up to 8 · Schools &amp; organisations welcome</p>
         </div>
       </div>
-      <p style="margin-top:16px;font-size:13px;">For school groups, organisations, or custom bookings, <a href="mailto:jessyhaiyang@gmail.com" style="color:var(--color-forest-mid);text-decoration:underline;">contact Jessy directly</a>.</p>
+      <p class="pricing-note">For school groups, organisations, or custom bookings, <a href="mailto:jessyhaiyang@gmail.com">contact Jessy directly</a>.</p>
     </div>
   </section>
 
   <!-- BOOKING FORM + HOW TO BOOK -->
-  <div style="background:var(--color-cream);padding-bottom:var(--space-lg);">
+  <section class="booking-section">
     <div class="container">
       <div class="book-layout">
 
         <!-- Left: How to book -->
-        <div>
+        <div class="book-info">
           <span class="label">How It Works</span>
           <h2>Booking a Tour</h2>
-          <p style="margin:8px 0 var(--space-md);">Tours are booked directly with Jessy — no third-party platform, no booking fees.</p>
+          <p class="book-intro">Tours are booked directly with Jessy — no third-party platform, no booking fees.</p>
 
           <ol class="steps">
             <li>
@@ -127,7 +128,7 @@
         </div>
 
         <!-- Right: Contact form -->
-        <div>
+        <div class="book-form-col">
           <div class="contact-form">
             <h3>Send an Enquiry</h3>
             <form action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID" method="POST">
@@ -167,41 +168,51 @@
                 <label for="message">Message</label>
                 <textarea id="message" name="message" placeholder="Any questions, accessibility requirements, or special requests..."></textarea>
               </div>
-              <button type="submit" class="btn btn-primary" style="width:100%;">Send Enquiry</button>
-              <p style="font-size:11px;color:var(--color-text-muted);margin-top:8px;text-align:center;">Or contact Jessy directly: <a href="mailto:jessyhaiyang@gmail.com" style="color:var(--color-forest-mid);text-decoration:underline;">jessyhaiyang@gmail.com</a></p>
+              <button type="submit" class="btn btn-primary btn-full">Send Enquiry</button>
+              <p class="form-alt-contact">Or contact Jessy directly: <a href="mailto:jessyhaiyang@gmail.com">jessyhaiyang@gmail.com</a></p>
             </form>
           </div>
         </div>
 
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- GETTING THERE -->
   <section class="getting-there">
-    <div class="getting-there-overlay">
-      <span class="label">Meeting Point</span>
-      <h2>How to Get There</h2>
-      <p>Tours depart from <strong>Tempe Station Carpark, Tempe NSW 2044</strong> — accessible by train, bus, and car.</p>
-      <div class="getting-there-details">
-        <div class="there-item">
-          <span class="there-label">Train</span>
-          <span class="there-value">Tempe Station — Airport & South Line · 2 min walk to carpark</span>
-        </div>
-        <div class="there-item">
-          <span class="there-label">Bus</span>
-          <span class="there-value">Routes 422, 423 stop on Unwins Bridge Rd · 3 min walk</span>
-        </div>
-        <div class="there-item">
-          <span class="there-label">Car</span>
-          <span class="there-value">Free street parking on Campbell St and Bourke Rd · Arrive 5 min early</span>
-        </div>
-        <div class="there-item">
-          <span class="there-label">Meet</span>
-          <span class="there-value">Jessy will be waiting at the carpark entrance at your confirmed start time</span>
-        </div>
+    <div class="getting-there-inner">
+
+      <!-- Left: info panel -->
+      <div class="getting-there-info">
+        <span class="label">Meeting Point</span>
+        <h2>How to Get There</h2>
+        <p class="getting-there-lead">Tours depart from <strong>Tempe Station Carpark, Tempe NSW 2044</strong> — accessible by train, bus, and car.</p>
+        <ul class="there-list">
+          <li class="there-item">
+            <span class="there-label">Train</span>
+            <span class="there-value">Tempe Station — Airport &amp; South Line · 2 min walk to carpark</span>
+          </li>
+          <li class="there-item">
+            <span class="there-label">Bus</span>
+            <span class="there-value">Routes 422, 423 stop on Unwins Bridge Rd · 3 min walk</span>
+          </li>
+          <li class="there-item">
+            <span class="there-label">Car</span>
+            <span class="there-value">Free street parking on Campbell St and Bourke Rd · Arrive 5 min early</span>
+          </li>
+          <li class="there-item">
+            <span class="there-label">Meet Jessy</span>
+            <span class="there-value">Jessy will be at the carpark entrance at your confirmed start time</span>
+          </li>
+        </ul>
+        <a href="https://maps.apple.com/?q=Tempe+Station+Carpark+Tempe+NSW" target="_blank" rel="noopener" class="btn btn-primary">Open in Maps</a>
       </div>
-      <a href="https://maps.apple.com/?q=Tempe+Station+Carpark+Tempe+NSW" target="_blank" rel="noopener" class="btn btn-primary">Open in Maps</a>
+
+      <!-- Right: map image -->
+      <div class="getting-there-map">
+        <img src="images/1000026691.png" alt="Map of Tempe Station Carpark meeting point and surrounding streets">
+      </div>
+
     </div>
   </section>
 

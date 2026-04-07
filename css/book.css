@@ -1,6 +1,64 @@
 /* ============================================
    BOOK.CSS — Bookings & contact page
    ============================================ */
+
+/* ---- PRICING SECTION ---- */
+.pricing-section {
+  width: 100%;
+  background: var(--color-cream);
+  padding: var(--space-lg) 0;
+  border-top: 1px solid rgba(82,183,136,0.15);
+}
+.pricing-section h2 { margin-bottom: var(--space-sm); }
+.pricing-note {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+.pricing-note a {
+  color: var(--color-forest-mid);
+  text-decoration: underline;
+}
+
+.price-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+@media (max-width: 700px) { .price-cards { grid-template-columns: 1fr; } }
+
+.price-card {
+  background: var(--color-white);
+  border-radius: 8px;
+  padding: var(--space-md);
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(27,58,45,0.06);
+}
+.price-card h3 {
+  font-size: 0.9rem;
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--color-text-muted);
+}
+.price-card .price {
+  font-size: 2rem;
+  font-family: var(--font-serif);
+  color: var(--color-forest);
+  margin-bottom: 8px;
+}
+.price-card .price-note { font-size: 12px; color: var(--color-text-muted); }
+
+/* ---- BOOKING SECTION ---- */
+.booking-section {
+  width: 100%;
+  background: var(--color-cream);
+  padding-bottom: var(--space-lg);
+}
+
 .book-layout {
   display: grid;
   grid-template-columns: 1fr 400px;
@@ -10,6 +68,13 @@
 }
 @media (max-width: 900px) {
   .book-layout { grid-template-columns: 1fr; }
+}
+
+/* Booking intro text */
+.book-intro {
+  margin: 8px 0 var(--space-md);
+  font-size: 14px;
+  color: var(--color-text-muted);
 }
 
 /* How to book steps */
@@ -37,10 +102,15 @@
   flex-shrink: 0;
 }
 .step-text h4 { font-size: 0.9rem; margin-bottom: 4px; font-family: var(--font-sans); font-weight: 600; }
-.step-text p { font-size: 13px; }
+.step-text p { font-size: 13px; color: var(--color-text-muted); line-height: 1.65; }
 
 /* Contact form */
-.contact-form { background: var(--color-white); border-radius: 8px; padding: var(--space-md); box-shadow: 0 2px 16px rgba(27,58,45,0.08); }
+.contact-form {
+  background: var(--color-white);
+  border-radius: 8px;
+  padding: var(--space-md);
+  box-shadow: 0 2px 16px rgba(27,58,45,0.08);
+}
 .contact-form h3 { margin-bottom: var(--space-sm); font-size: 1.1rem; }
 
 .form-group { margin-bottom: var(--space-sm); }
@@ -70,9 +140,7 @@
 }
 .form-group input:focus,
 .form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--color-sage);
-}
+.form-group textarea:focus { border-color: var(--color-sage); }
 .form-group input:focus-visible,
 .form-group select:focus-visible,
 .form-group textarea:focus-visible {
@@ -82,6 +150,15 @@
 .form-group textarea { resize: vertical; min-height: 100px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm); }
 @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+
+.btn-full { width: 100%; }
+.form-alt-contact {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin-top: 8px;
+  text-align: center;
+}
+.form-alt-contact a { color: var(--color-forest-mid); text-decoration: underline; }
 
 /* Direct contact panel */
 .direct-contact {
@@ -99,50 +176,69 @@
   border-bottom: 1px solid rgba(82,183,136,0.15);
 }
 .contact-method:last-child { border-bottom: none; }
-.contact-method-label { font-family: var(--font-sans); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: rgba(212,233,194,0.5); display: block; margin-bottom: 2px; }
-.contact-method a { color: var(--color-sage-light); font-size: 14px; text-decoration: none; }
+.contact-method-label {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(212,233,194,0.5);
+  display: block;
+  margin-bottom: 2px;
+}
+.contact-method a { color: var(--color-sage-light); font-size: 14px; }
 .contact-method a:hover { color: var(--color-sage); text-decoration: underline; }
 
-/* Getting There map section */
+/* ---- GETTING THERE ---- */
 .getting-there {
-  background:
-    url('../images/1000026691.png') center/cover no-repeat;
-  position: relative;
+  width: 100%;
+  background: var(--color-forest-dark);
 }
-.getting-there-overlay {
-  background: linear-gradient(135deg, rgba(13,34,24,0.88) 0%, rgba(27,58,45,0.84) 60%, rgba(13,34,24,0.78) 100%);
-  padding: var(--space-xl) var(--space-md);
-  text-align: center;
-}
-.getting-there-overlay .label { color: var(--color-sage); display: block; margin-bottom: var(--space-sm); }
-.getting-there-overlay h2 { color: var(--color-sage-light); margin-bottom: 12px; }
-.getting-there-overlay > p { color: rgba(212,233,194,0.75); max-width: 560px; margin: 0 auto var(--space-md); font-size: 14px; line-height: 1.7; }
-.getting-there-overlay strong { color: var(--color-sage-light); }
 
-.getting-there-details {
+.getting-there-inner {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+}
+
+/* Left info panel */
+.getting-there-info {
+  padding: var(--space-lg) var(--space-md) var(--space-lg) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+.getting-there-info .label { color: var(--color-sage); }
+.getting-there-info h2 { color: var(--color-sage-light); }
+.getting-there-lead {
+  color: rgba(212,233,194,0.75);
+  font-size: 14px;
+  line-height: 1.7;
+}
+.getting-there-lead strong { color: var(--color-sage-light); font-style: normal; }
+
+.there-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
   gap: 2px;
-  max-width: 680px;
-  margin: 0 auto var(--space-md);
-  border-radius: 8px;
-  overflow: hidden;
+  margin: 4px 0;
 }
 .there-item {
-  background: rgba(27,58,45,0.65);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-  padding: 16px 20px;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 16px;
+  background: rgba(45,106,79,0.2);
+  border-left: 3px solid rgba(82,183,136,0.4);
+  border-radius: 0 4px 4px 0;
 }
 .there-label {
-  display: block;
   font-family: var(--font-sans);
   font-size: 9px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--color-sage);
-  margin-bottom: 4px;
   font-weight: 700;
 }
 .there-value {
@@ -150,26 +246,37 @@
   color: rgba(212,233,194,0.85);
   line-height: 1.5;
 }
-@media (max-width: 600px) {
-  .getting-there-details { grid-template-columns: 1fr; }
+
+/* Right map panel */
+.getting-there-map {
+  position: relative;
+  overflow: hidden;
+}
+.getting-there-map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: saturate(0.75) brightness(0.9) contrast(1.05);
 }
 
-/* Pricing */
-.pricing-section { background: var(--color-cream); padding: var(--space-lg) 0; border-top: 1px solid rgba(82,183,136,0.15); }
-.price-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-sm);
-  margin-top: var(--space-md);
+/* Mobile: stack vertically */
+@media (max-width: 768px) {
+  .getting-there-inner { grid-template-columns: 1fr; }
+  .getting-there-info {
+    padding: var(--space-md);
+  }
+  .getting-there-map {
+    height: 280px;
+    order: -1; /* map appears above info on mobile */
+  }
 }
-@media (max-width: 700px) { .price-cards { grid-template-columns: 1fr; } }
-.price-card {
-  background: var(--color-white);
-  border-radius: 8px;
-  padding: var(--space-md);
-  text-align: center;
-  box-shadow: 0 2px 12px rgba(27,58,45,0.06);
+
+/* Max-width cap for very wide screens */
+@media (min-width: 1600px) {
+  .getting-there-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
 }
-.price-card h3 { font-size: 0.9rem; font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 12px; color: var(--color-text-muted); }
-.price-card .price { font-size: 2rem; font-family: var(--font-serif); color: var(--color-forest); margin-bottom: 8px; }
-.price-card .price-note { font-size: 12px; color: var(--color-text-muted); }
