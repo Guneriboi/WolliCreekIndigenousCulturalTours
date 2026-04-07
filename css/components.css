@@ -127,7 +127,7 @@
   color: var(--color-sage-light);
   border: 1px solid rgba(212,233,194,0.4);
 }
-.btn-ghost:hover { border-color: var(--color-sage-light); color: #fff; }
+.btn-ghost:hover { border-color: var(--color-sage-light); color: var(--color-white); }
 
 .btn-ghost-dark {
   background: transparent;
@@ -135,6 +135,19 @@
   border: 1px solid rgba(13,34,24,0.3); /* --color-forest-dark at 30% opacity */
 }
 .btn-ghost-dark:hover { border-color: var(--color-forest-dark); }
+
+/* Focus-visible for keyboard accessibility */
+.btn:focus-visible,
+.nav-cta:focus-visible,
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--color-sage);
+  outline-offset: 3px;
+}
+.nav-links a:focus-visible {
+  outline: 2px solid var(--color-sage);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
 
 /* ---- HIGHLIGHT CARD ---- */
 .card {
