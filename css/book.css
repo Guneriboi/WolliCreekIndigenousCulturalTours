@@ -103,6 +103,57 @@
 .contact-method a { color: var(--color-sage-light); font-size: 14px; text-decoration: none; }
 .contact-method a:hover { color: var(--color-sage); text-decoration: underline; }
 
+/* Getting There map section */
+.getting-there {
+  background:
+    url('../images/1000026691.png') center/cover no-repeat;
+  position: relative;
+}
+.getting-there-overlay {
+  background: linear-gradient(135deg, rgba(13,34,24,0.88) 0%, rgba(27,58,45,0.84) 60%, rgba(13,34,24,0.78) 100%);
+  padding: var(--space-xl) var(--space-md);
+  text-align: center;
+}
+.getting-there-overlay .label { color: var(--color-sage); display: block; margin-bottom: var(--space-sm); }
+.getting-there-overlay h2 { color: var(--color-sage-light); margin-bottom: 12px; }
+.getting-there-overlay > p { color: rgba(212,233,194,0.75); max-width: 560px; margin: 0 auto var(--space-md); font-size: 14px; line-height: 1.7; }
+.getting-there-overlay strong { color: var(--color-sage-light); }
+
+.getting-there-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  max-width: 680px;
+  margin: 0 auto var(--space-md);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.there-item {
+  background: rgba(27,58,45,0.65);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  padding: 16px 20px;
+  text-align: left;
+}
+.there-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+.there-value {
+  font-size: 13px;
+  color: rgba(212,233,194,0.85);
+  line-height: 1.5;
+}
+@media (max-width: 600px) {
+  .getting-there-details { grid-template-columns: 1fr; }
+}
+
 /* Pricing */
 .pricing-section { background: var(--color-cream); padding: var(--space-lg) 0; border-top: 1px solid rgba(82,183,136,0.15); }
 .price-cards {
