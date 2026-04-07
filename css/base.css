@@ -7,6 +7,7 @@
   --color-forest-dark:   #0D2218;
   --color-forest:        #1B3A2D;
   --color-forest-mid:    #2D6A4F;
+  --color-forest-light:  #3a7a5f;
   --color-sage:          #52B788;
   --color-sage-light:    #D4E9C2;
   --color-cream:         #f5f0e8;
@@ -67,4 +68,29 @@ p { font-family: var(--font-sans); }
 /* Scroll-reveal */
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
 .reveal.revealed { opacity: 1; transform: none; }
+
+/* Skip navigation link */
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: 0;
+  background: var(--color-sage);
+  color: var(--color-forest-dark);
+  padding: 8px 16px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 999;
+  transition: top 0.2s;
+  text-decoration: none;
+}
+.skip-link:focus { top: 0; }
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { transition: none; }
+}
 

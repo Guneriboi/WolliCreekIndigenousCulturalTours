@@ -11,6 +11,8 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <nav class="site-nav">
     <a href="index.html" class="nav-logo">Wolli Creek <span>Cultural Tours</span></a>
     <ul class="nav-links">
@@ -24,6 +26,8 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
+
+  <main id="main-content">
 
   <header class="page-hero">
     <span class="label">Book a Tour</span>
@@ -126,7 +130,8 @@
         <div>
           <div class="contact-form">
             <h3>Send an Enquiry</h3>
-            <form action="mailto:jessyhaiyang@gmail.com" method="post" enctype="text/plain">
+            <form action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID" method="POST">
+              <input type="hidden" name="_subject" value="Tour Enquiry — Wolli Creek Cultural Tours">
               <div class="form-row">
                 <div class="form-group">
                   <label for="name">Your Name</label>
@@ -139,7 +144,7 @@
               </div>
               <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="you@email.com" required>
+                <input type="email" id="email" name="_replyto" placeholder="you@email.com" required>
               </div>
               <div class="form-row">
                 <div class="form-group">
@@ -163,6 +168,7 @@
                 <textarea id="message" name="message" placeholder="Any questions, accessibility requirements, or special requests..."></textarea>
               </div>
               <button type="submit" class="btn btn-primary" style="width:100%;">Send Enquiry</button>
+              <p style="font-size:11px;color:var(--color-text-muted);margin-top:8px;text-align:center;">Or contact Jessy directly: <a href="mailto:jessyhaiyang@gmail.com" style="color:var(--color-forest-mid);text-decoration:underline;">jessyhaiyang@gmail.com</a></p>
             </form>
           </div>
         </div>
@@ -170,6 +176,8 @@
       </div>
     </div>
   </div>
+
+  </main>
 
   <footer class="site-footer">
     <p>Wolli Creek Valley Cultural Tours · Bidjigal &amp; Dharawal Country · Inner West Sydney</p>

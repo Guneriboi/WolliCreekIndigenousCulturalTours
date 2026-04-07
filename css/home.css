@@ -5,7 +5,7 @@
 /* ---- HERO ---- */
 .home-hero {
   min-height: 88vh;
-  background: linear-gradient(160deg, var(--color-forest-dark) 0%, var(--color-forest) 45%, var(--color-forest-mid) 80%, #3a7a5f 100%);
+  background: linear-gradient(160deg, var(--color-forest-dark) 0%, var(--color-forest) 45%, var(--color-forest-mid) 80%, var(--color-forest-light) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
